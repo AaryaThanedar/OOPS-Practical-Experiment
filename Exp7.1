@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+
+float area(float length, float breadth) {
+    return length * breadth;
+}
+
+
+float area(float side) {
+    return side * side;
+}
+
+int main() {
+    float length, breadth, side;
+
+    cout << "Enter length and breadth of the laboratory: ";
+    cin >> length >> breadth;
+    cout << "Area of Laboratory (Rectangle): " << area(length, breadth) << " sq. units" << endl;
+
+    cout << "Enter side of the classroom: ";
+    cin >> side;
+    cout << "Area of Classroom (Square): " << area(side) << " sq. units" << endl;
+
+    return 0;
+}
