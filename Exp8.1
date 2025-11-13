@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class AddString {
+private:
+    string str;
+
+public:
+   
+    AddString(string s = "") {
+        str = s;
+    }
+
+    
+    AddString operator +(AddString &obj) {
+        AddString temp;
+        temp.str = str + obj.str; 
+        return temp;
+    }
+
+   
+    void display() {
+        cout << str << endl;
+    }
+};
+
+int main() {
+    AddString s1("xyz");
+    AddString s2("pqr");
+
+    AddString s3 = s1 + s2; 
+
+    cout << "Concatenated String: ";
+    s3.display();
+
+    return 0;
+}
