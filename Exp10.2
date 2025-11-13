@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+template <class T>
+T square(T num) {
+    return num * num;   
+}
+
+
+template <>
+string square<string>(string str) {
+    return str + str;   
+}
+
+int main() {
+    int i = 5;
+    double d = 3.2;
+    string s = "Hello";
+
+    cout << "Square of Integer (" << i << ") = " << square(i) << endl;
+    cout << "Square of Double (" << d << ") = " << square(d) << endl;
+    cout << "Square of String (\"" << s << "\") = " << square(s) << endl;
+
+    return 0;
+}
