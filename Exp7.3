@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int num;
+
+public:
+    
+    Number(int n = 0) {
+        num = n;
+    }
+
+   
+    void display() {
+        cout << "Number = " << num << endl;
+    }
+
+    
+    void operator -() {
+        num = -num; 
+    }
+};
+
+int main() {
+    Number n1(25);
+
+    cout << "Before negation: ";
+    n1.display();
+
+    
+    -n1;
+
+    cout << "After negation: ";
+    n1.display();
+
+    return 0;
+}
