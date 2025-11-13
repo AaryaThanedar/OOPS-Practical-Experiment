@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Student{
+	int roll;
+	string name;
+	public:
+		Student(){
+			name="Trisha";
+			roll=2;
+		}
+		Student(int r,string n){
+		roll=r;
+		name=n;
+		}
+		Student (Student &s){
+			roll=s.roll;
+			name=s.name;
+		}
+		void func(){
+			cout<<"roll:"<<roll<<" name:"<<name<<"\n";
+		}
+};
+int main(){
+	Student n1;
+	n1.func();
+	Student n2(5,"Aman");
+	n2.func();
+	Student n3(n2);
+	n3.func();
+  return 0;
+}
