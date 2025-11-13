@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class city
+{
+public:
+int population;
+string name;
+public:
+void accept()
+{
+cout<<"Enter the city and population:";
+cin>>name>>population;
+}
+};
+int main()
+{
+city c[5];
+int i,max;
+for(i=0;i<5;i++)
+{
+c[i].accept();
+}
+max=c[0].population;
+for(i-0;i<5;i++)
+{
+if(c[i].population>max)
+{
+max=i;
+}
+c[max].display();
+}
+return 0;
+}
