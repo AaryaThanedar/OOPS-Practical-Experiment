@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+
+template <class T>
+T findSum(T arr[], int size) {
+    T sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main() {
+    const int size = 10;
+
+    int intArr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    float floatArr[size] = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.1};
+    double doubleArr[size] = {0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5};
+
+    cout << "Sum of Integer Array: " << findSum(intArr, size) << endl;
+    cout << "Sum of Float Array: " << findSum(floatArr, size) << endl;
+    cout << "Sum of Double Array: " << findSum(doubleArr, size) << endl;
+
+    return 0;
+}
