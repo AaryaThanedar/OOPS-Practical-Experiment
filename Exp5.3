@@ -1,0 +1,24 @@
+include <iostream>
+using namespace std;
+class college {
+int roll;
+string name, course;
+public:
+college (int r, string n, string c =" computer engineering"){
+roll = r;
+name=n;
+course = c;}
+void display() {
+
+cout <<" name, roll no and course is: " << name<< roll<< course;
+}};
+
+int main()
+college c1 (1," Aarya","CSE");
+college c2 (1, Aarya");
+
+c1. display();
+
+c2. display ();
+
+return 0;}
