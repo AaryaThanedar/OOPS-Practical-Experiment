@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class sum
+{
+int num;
+int s;
+public:
+sum()
+{
+s=0;
+num=5;
+for(int i=1;i<num;i++)
+{
+s=s+i;
+}
+}
+void display()
+{
+cout<<"sum="<<s;
+}
+~sum()
+{
+cout<<"Object destroyed";
+}
+};
+int main()
+{
+sum s1;
+s1.display();
+return 0;
+}
