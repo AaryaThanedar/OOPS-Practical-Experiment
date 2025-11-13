@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+
+template <class T>
+class Calculator {
+private:
+    T num1, num2;
+
+public:
+   
+    Calculator(T n1, T n2) {
+        num1 = n1;
+        num2 = n2;
+    }
+
+    void add() {
+        cout << "Addition: " << num1 + num2 << endl;
+    }
+
+    void subtract() {
+        cout << "Subtraction: " << num1 - num2 << endl;
+    }
+
+    void multiply() {
+        cout << "Multiplication: " << num1 * num2 << endl;
+    }
+
+    void divide() {
+        if (num2 != 0)
+            cout << "Division: " << num1 / num2 << endl;
+        else
+            cout << "Error! Division by zero is not allowed." << endl;
+    }
+};
+
+int main() {
+    cout << "=== Simple Calculator Using Class Template ===" << endl;
+
+    int a, b;
+    cout << "\nEnter two integers: ";
+    cin >> a >> b;
+
+  
+    Calculator<int> intCalc(a, b);
+    intCalc.add();
+    intCalc.subtract();
+    intCalc.multiply();
+    intCalc.divide();
+
+    float x, y;
+    cout << "\nEnter two float values: ";
+    cin >> x >> y;
+
+   
+    Calculator<float> floatCalc(x, y);
+    floatCalc.add();
+    floatCalc.subtract();
+    floatCalc.multiply();
+    floatCalc.divide();
+
+    return 0;
+}
