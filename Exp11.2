@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+
+// Template class for Generic Vector
+template <class T>
+class MyVector {
+private:
+    T *arr;   // Dynamic array
+    int size; // Number of elements
+
+public:
+    // Constructor
+    MyVector(int s) {
+        size = s;
+        arr = new T[size];
+    }
+
+    // Accept elements
+    void accept() {
+        cout << "Enter " << size << " elements:\n";
+        for (int i = 0; i < size; i++) {
+            cout << "Element " << i + 1 << ": ";
+            cin >> arr[i];
+        }
+    }
+
+    // Display elements
+    void display() {
+        cout << "Vector Elements: ";
+        for (int i = 0; i < size; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+
+    // Modify an element
+    void modify(int index, T newValue) {
+        if (index >= 0 && index < size) {
+            arr[index] = newValue;
+            cout << "Element at index " << index << " modified successfully!\n";
+        } else {
+            cout << "Invalid index!\n";
+        }
+    }
+
+    // Multiply all elements by a scalar
+    void multiplyByScalar(T scalar) {
+        for (int i = 0; i < size; i++) {
+            arr[i] = arr[i] * scalar;
+        }
+        cout << "All elements multiplied by " << scalar << " successfully!\n";
+    }
+
+    // Destructor
+    ~MyVector() {
+        delete[] arr;
+    }
+};
+
+// Main Function
+int main() {
+    int size;
+    cout << "Enter the size of vector: ";
+    cin >> size;
+
+    // Create vector of integers
+    MyVector<int> vec(size);
+
+    vec.accept();
+    vec.display();
+
+    int index, newValue;
+    cout << "\nEnter index to modify (0-based): ";
+    cin >> index;
+    cout << "Enter new value: ";
+    cin >> newValue;
+    vec.modify(index, newValue);
+    vec.display();
+
+    int scalar;
+    cout << "\nEnter scalar value to multiply with vector: ";
+    cin >> scalar;
+    vec.multiplyByScalar(scalar);
+    vec.display();
+
+    return 0;
+}
