@@ -1,0 +1,27 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream fin("sample.txt", ios::in);  
+
+    if (!fin) {
+        cout << "Error: Cannot open file 'sample.txt'!" << endl;
+        return 1;
+    }
+
+    string word;
+    int wordCount = 0;
+
+   
+    while (fin >> word) {
+        wordCount++;
+    }
+
+    fin.close();  
+
+    cout << "Total number of words in the file: " << wordCount << endl;
+
+    return 0;
+}
