@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    char ch;
+
+    
+    ifstream fin("first.txt", ios::in);
+    // Open the second file in write mode
+    ofstream fout("second.txt", ios::out);
+
+    
+    if (!fin) {
+        cout << "Error: Cannot open first.txt for reading!" << endl;
+        return 1;
+    }
+
+    if (!fout) {
+        cout << "Error: Cannot open second.txt for writing!" << endl;
+        return 1;
+    }
+
+   
+    while (fin.get(ch)) {
+        fout.put(ch);
+    }
+
+    cout << "Contents of 'first.txt' copied successfully into 'second.txt'!" << endl;
+
+   
+    fin.close();
+    fout.close();
+
+    return 0;
+}
