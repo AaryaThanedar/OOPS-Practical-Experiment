@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+class book
+{
+int pages;
+string name;
+float price;
+public:
+void accept()
+{ cout <<" Enter value of name, price pages";
+
+cin >> name>> price >> pages;
+}
+void display()
+{
+cout << "Name: " <<name <<", price:"<<< << " Pages: " << pages <<endl;
+} };
+int main()
+{
+book b1, b2;
+b1. accept();
+b2. accept();
+cout << "\n Book with greater price:\n";
+if (b1. price> b2.price)
+{
+b1. display();
+else if (b2.price> b1. price)
+{
+b2. display();
+}
+else
+{
+cout <<"Both books have the same price:\n";
+
+bl. display();
+
+b2.display();
+}
+return 0;
+}
+Enter value of name,price,pages:Harry Potter
+500
+300
+Enter value of name,price,pages:Sudhamurty
+650
+350
+Book with greater price:
+name:sudhamurty,price:650:pages:350
