@@ -1,0 +1,59 @@
+#include <iostream>
+#include <stack> 
+using namespace std;
+
+int main() {
+    stack<int> s; 
+    int choice, value;
+
+    cout << "=== STACK IMPLEMENTATION USING STL ===\n";
+
+    do {
+        cout << "\n1. Push Element";
+        cout << "\n2. Pop Element";
+        cout << "\n3. Display Top Element";
+        cout << "\n4. Display Stack Size";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter value to push: ";
+                cin >> value;
+                s.push(value);
+                cout << value << " pushed into the stack.\n";
+                break;
+
+            case 2:
+                if (!s.empty()) {
+                    cout << s.top() << " popped from the stack.\n";
+                    s.pop();
+                } else {
+                    cout << "Stack is empty!\n";
+                }
+                break;
+
+            case 3:
+                if (!s.empty())
+                    cout << "Top element: " << s.top() << endl;
+                else
+                    cout << "Stack is empty!\n";
+                break;
+
+            case 4:
+                cout << "Stack size: " << s.size() << endl;
+                break;
+
+            case 5:
+                cout << "Exiting program...\n";
+                break;
+
+            default:
+                cout << "Invalid choice! Try again.\n";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
