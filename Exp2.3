@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class Staff{
+	public:
+		string name ,post;
+		void acc(){
+			cout<<"enter name post:";
+			cin>>name>>post;
+		}
+		void disp(){
+			cout<<"name:"<<name<<"\npost:"<<post;
+		}
+};
+int main(){
+	Staff s[5];
+	int i;
+	for(i=0;i<5;i++){
+			cout<<"list details for staff"<<i+1<<":"<<endl;
+      s[i].accept();
+      }
+      cout<<"\n list of staff with post HOD:"<<endl;
+      for(i=0;i<5;i++)
+      {
+      s[i].display if HOD();
+      }
+      return 0;
+      }
